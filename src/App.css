@@ -1,0 +1,100 @@
+* {
+  padding: 0;
+  margin: 0;
+  position: relative;
+  box-sizing: border-box;
+}
+
+:root {
+  --headerbg: #53ACC7;
+  --headercolor: white;
+  --bodybg: white; 
+  --altbackground: #10325A;
+  --primaryfont: #474E54;  ;
+  --secondaryfont: #2c2e35;
+  --errortext: #C42021;
+  --highlighttext: #157145;
+  --primaryheading: #006CD1;
+
+}
+
+body {
+  /* setting a font size for all child elements that can then be relatively referenced */
+  font-size: 18px;
+  /* sets the space between lines of text */
+  line-height: 1.2;
+  font-family: 'Barlow Semi Condensed', Tahoma, Verdana, sans-serif;
+}
+
+.container {
+  min-height: 100vh;
+  width: 100%;
+  background: var(--bodybg);
+}
+
+main {
+  background-color: var(--bodybg);
+  min-height: calc(100vh - 80px);
+}
+
+a {
+  text-decoration: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.isFixed {
+  position: fixed;
+}
+
+.btn {
+  cursor: pointer;
+  padding: 1rem;
+  min-width: 120px;
+  margin: 0px;
+  border-radius: 0%;
+  border: none;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1;
+  width:100%;
+}
+
+.primaryCTA {
+  background-color: #FBA504;
+  border: solid 1px #FBA504;
+  color: #10325A;
+}
+
+.primaryCTA:hover,
+.primaryCTA:active {
+  background-color: #ffc14b;
+  border: solid 1px #ffc14b;
+}
+
+.secondaryCTA {
+  background-color: #0060B9;
+  border: solid 1px #0060B9;
+  color: #ffffff;
+}
+
+.secondaryCTA:hover,
+.secondaryCTA:active {
+  background-color: #006CD1;
+  border: solid 1px #006CD1;
+}
+
+.tertiaryCTA {
+  background-color: var(--bodybg);
+  border: solid 1px var(--altbackground);
+  color: var(--altbackground);
+}
+
+.tertiaryCTA:hover,
+.tertiaryCTA:active {
+  background-color: #eeeeee;
+}

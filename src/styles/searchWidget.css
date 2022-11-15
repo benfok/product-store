@@ -1,0 +1,130 @@
+.searchByContainer {
+    padding: 0;
+    margin: 5px 5px 0 5px;
+}
+
+.resultsContainer {
+    padding: 0;
+    margin: 0 5px 5px 5px;
+    border: solid 1px var(--altbackground);
+    border-top: none;
+}
+
+.searchByBtn {
+    background-color: var(--altbackground);
+    color: white;
+    height: 100px;
+    width: 50%;
+    display: inline-block;
+    font-size: 120%;
+    padding: 20px;
+    border: solid 1px var(--altbackground);
+    border-bottom: none;
+}
+
+.searchByBtn:hover {
+    cursor: pointer;
+}
+
+.searchByActive {
+    background-color: var(--bodybg);
+    color: var(--primaryfont);
+    width: 50%;
+}
+
+.sortContainer {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    margin: 0 10px 20px 10px;
+    gap: 20px;
+}
+
+.sort {
+    width: 100%;
+
+}
+
+.rewardsContainer {
+    display: flex;
+    border: solid 1px #161D65;
+    color: #161D65;
+    width: 340px;
+    background-color: white;
+    height: 42px;
+}
+
+.rewardsContainer div:first-child {
+    padding: 0 5px;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-weight: 600;
+    background-color: #EE6D0E;
+}
+
+.rewardsBarAngle {
+    width: 0;
+    height: inherit;
+    border-left: 20px solid #EE6D0E;
+    border-bottom: 42px solid transparent;
+}
+
+.rewardsBarTextContainer {
+    background-color: white;
+    padding-left: 2px;
+    margin: auto 0;
+}
+
+.rewardsBarTextContainer p:first-child {
+    display: flex;
+    align-items: flex-end;
+    font-size: 16px;
+}
+
+.rewardsBarTextContainer p:nth-child(2) {
+    font-size: 14px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.rewardsinfoIcon {
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+@media only screen and (min-width: 1080px) {
+    .sortContainer {
+        flex-flow: row;
+    }
+
+    .rewardsContainer {
+        flex: 1 0 33%;
+        order: 1;
+        min-width: 350px;
+    }
+
+    .rewardsBarTextContainer {
+        padding-left: 10px;
+    }
+
+    .hideUnavailableContainer {
+        order: 2;
+    }
+
+    .sort {
+        order: 3;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .searchByContainer {
+        width: 1180px;
+        margin: auto;
+    }
+    
+    .resultsContainer {
+        width: 1180px;
+        margin: auto;
+    }
+}

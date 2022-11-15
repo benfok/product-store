@@ -1,0 +1,104 @@
+.productCard {
+    border: solid 1px #dddddd;
+    margin: 5% 7px;
+    padding: 3%;
+}
+
+.productHeader {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding-bottom: 0.8rem;
+    align-items: center;
+}
+
+.productCard h3,
+.productTableCard h3 {
+    font-size: 100%;
+    color: var(--primaryheading);
+    text-transform: uppercase;
+}
+
+.productCard h4,
+.productTableCard h4 {
+    font-size: 70%;
+    text-transform: uppercase;
+}
+
+.productAttributes {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+    color: var(--secondaryfont);
+}
+
+.productAttributeValue {
+    font-size: 90%;
+    color: var(--primaryfont);
+}
+
+.priceContainer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 90%;
+    font-weight: bold;
+    padding: 10px 10px 0 10px;
+    border-top: solid 1px #eeeeee;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+.onlineRate {
+    font-weight: bold;
+    font-size: 100%;
+}
+
+.savingsContainer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 80%;
+    font-weight: bold;
+    padding: 0px 10px;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+.windowRate {
+    color: var(--secondaryfont);
+    text-align: right;
+    font-size: 90%;
+}
+
+.priceSavings {
+    text-align: left;
+    padding: 3px 0;
+    color: var(--highlighttext);
+    font-weight: bold;
+    font-size: 90%;
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding-top: 20px;
+}
+
+.infoIcon {
+    color: #0060B9;
+    font-size: 25px;
+}
+
+.infoIcon:hover,
+.infoIcon:active {
+    cursor: pointer;
+}
+
+.productUnavailable {
+    color: var(--errortext);
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    font-size: 80%;
+}

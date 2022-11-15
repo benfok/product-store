@@ -1,0 +1,104 @@
+.header {
+    background-color: #006CD1;
+    margin-bottom: 70px;
+}
+
+.heroBackgroundGradient {
+    background-color: #006cd1;
+    background-image: url(../assets/skischool-header-mountains.svg);
+    background-repeat: no-repeat;
+    background-position: 100% 101%;
+    bottom: 0;
+    position: absolute;
+    height: 100%;
+    right: 0;
+    width: 100%;
+    overflow: hidden;
+    transform: perspective(1px) skewY(2.5deg);
+    transform-origin: top left;
+    outline: 1px solid transparent;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.desktopNav {
+    width: 1098px;
+    height: 59px;
+}
+
+.mobileNav {
+    width: 148px;
+    height: 58px;
+}
+
+.navPicContainer {
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+    width: 100%;
+    padding-right: 30px;
+}
+
+.heroTextContainer {
+    color: white;
+    margin: 0 20px;
+    padding: 30px 0 70px 0;
+}
+
+.heroSub {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 80%;
+}
+
+h1 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 120%;
+    font-weight: 400;
+    margin: 10px 0
+}
+
+.heroTextContainer p {
+    font-size: 75%;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+
+@media only screen and (max-width: 660px) {
+    .heroBackgroundGradient {
+        background-size: 100%;
+    }
+}
+
+@media only screen and (max-width: 1130px) {
+    .desktopNav {
+        max-width: 1050px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .header {
+        margin-bottom: 120px;
+    }
+    
+    .navPicContainer {
+        justify-content: center;
+        padding: 0;
+    }
+
+    .heroTextContainer {
+        width: 1180px;
+        margin: auto;
+        padding: 50px 0;
+    }
+
+    h1 {
+        font-size: 250%;
+    }
+    
+    p {
+        font-size: 80%;
+    }
+
+}

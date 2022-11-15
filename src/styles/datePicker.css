@@ -1,0 +1,29 @@
+.datePicker {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    padding: 0;
+    margin: 20px 10px;
+    border: solid 1px var(--altbackground);
+
+}
+
+.datePicker:hover,
+.datePicker:active {
+    cursor: pointer;
+}
+
+.datePickerIconContainer {
+    background-color: var(--altbackground);
+    display: flex;
+    padding: 15px;
+}
+
+.datePickerIcon {
+    color: white;
+    font-size: 20px;
+    background-color: var(--altbackground);
+
+}

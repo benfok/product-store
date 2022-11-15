@@ -1,0 +1,26 @@
+.sort {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding-left: 20px;
+    border: solid 1px var(--altbackground);
+    background-color: var(--bodybg);
+    color: var(--primaryfont);
+
+}
+
+.sort:hover,
+.sort:active {
+    cursor: pointer;
+}
+
+.sortIconContainer {
+    display: flex;
+    padding: 15px;
+}
+
+.sortIcon {
+    font-size: 20px;
+}

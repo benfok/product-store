@@ -1,0 +1,301 @@
+
+.modalOuter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(255,255,255, 0.8);
+    z-index: 1;
+    height: 100%;
+    width: 100%;  
+    min-width: 90%;
+    border-radius: 10px;
+}
+
+.modal {
+    position: fixed;
+    background-color: var(--bodybg);
+    border: solid 1px #474E54;
+    padding: 2rem;
+    z-index: 2;
+    font-size: 80%;
+    margin: 3rem 10%;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+.purchaseModal {
+    font-size: 120%;
+}
+
+.modalCloseIcon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 25px;
+}
+
+.modalCloseIcon:hover {
+    cursor: pointer;
+}
+
+.productHeaderModal {
+    display: block;
+    padding-bottom: 0.8rem;
+    width: 100%;
+    border-bottom: solid 1px #dddddd;
+}
+
+.purchaseModal h3 {
+    font-size: 100%;
+    color: var(--primaryheading);
+    text-transform: uppercase;
+}
+
+.purchaseModal h4 {
+    font-size: 70%;
+    text-transform: uppercase;
+    color: var(--secondaryfont);
+}
+
+.prodAttributesModal {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+}
+
+.productAttValueModal {
+    font-size: 90%;
+    color: var(--primaryfont);
+}
+
+.productCopyContainer {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 5px;
+}
+
+.prodCopyContainerItem {
+    padding: 20px 0;
+    flex: 1 0 40%;
+}
+
+.prodCopyContainerItem:first-child{
+    box-shadow: 5px 5px 10px #eeeeee;
+    border: solid 1px #eeeeee;
+    padding: 20px 30px;
+}
+
+.prodCopyContainerItem p {
+    font-size: 70%;
+    text-align: justify;
+}
+
+.prodCopyContainerItem ul {
+    font-size: 70%;
+    margin: 10px 0 0 20px;
+}
+
+.prodCopyContainerItem h4 {
+    margin-top: 20px;
+}
+
+.modalDate {
+    font-size: 100%;
+    margin: 10px 20px;
+    text-align: center;
+    border: solid 1px #dddddd;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.locationSelectModal,
+.addOnSelectModal {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    margin: 5px 20px;
+}
+
+.location,
+.addOn {
+    text-align: center;
+    padding: 5px;
+    margin: 2px 10px 2px 0;
+    width: 30px;
+    height: 30px;
+    border: solid 1px #dddddd;
+    border-radius: 15px;
+}
+
+.locationOption {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+}
+
+.addOnOption {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+    justify-content: space-between;
+}
+
+.locationName,
+.addOnName {
+    font-weight: bold;
+}
+
+.locationSub,
+.addOnSub {
+    font-size: 14px !important;
+}
+
+.participantsSelectModal,
+.daysSelectModal {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    flex: 1 0 100%;
+    margin: 5px;
+}
+
+.participantsSelectModal div,
+.daysSelectModal div {
+    padding: 10px 20px;
+}
+
+.participantsSelectModal div:first-child,
+.daysSelectModal div:first-child {
+    border-radius: 10px 0 0 10px;
+}
+
+.participantsSelectModal div:last-child,
+.daysSelectModal div:last-child {
+    border-radius: 0 10px 10px 0;
+}
+
+.participantsSelectModal div:hover,
+.daysSelectModal div:hover,
+.location:hover,
+.addOn:hover {
+    cursor: pointer;
+}
+
+.participantsActive,
+.daysActive,
+.addOnActive,
+.participantsSelectModal div:active,
+.daysSelectModal div:active,
+.locationActive {
+    background-color: var(--primaryfont);
+    color: white;
+}
+
+.priceContainerModal {
+    display: flex;
+    flex-flow: column;
+    font-size: 90%;
+    padding: 10px 20px 0 20px;
+    border-top: solid 1px #eeeeee;
+    text-transform: uppercase;
+}
+
+.priceRowModal {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+}
+
+.onlineRateModal {
+    font-weight: bold;
+    font-size: 75% !important;
+}
+
+.rewardsRateModal {
+    color: #161D65;
+    margin-top: 3px;
+    vertical-align: middle;
+}
+
+.savingsContainerModal {
+    display: flex;
+    justify-content: end;
+    font-size: 80%;
+    font-weight: bold;
+    padding: 0px 10px;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+.windowRateModal {
+    color: var(--secondaryfont);
+    text-align: right;
+    font-size: 90%;
+    color: grey;
+}
+
+.windowRateModalPrice {
+    text-decoration: line-through;
+}
+
+.priceSavingsModal {
+    text-align: left;
+    padding: 3px 0;
+    color: var(--highlighttext);
+    font-weight: bold;
+    font-size: 90%;
+}
+
+.buttonContainerModal {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding-top: 20px;
+}
+
+/* Style the checkmark/indicator */
+.locationActive .modalCheckbox,
+.addOnActive .modalCheckbox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--primaryfont);
+    left: 9px;
+    top: 3px;
+    width: 8px;
+    height: 15px;
+    border: solid var(--bodybg);
+    border-width: 0 4px 4px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.addOnRowItem-name {
+    display: flex;
+    flex-flow: row;
+
+}
+.addOnRowItem-rate {
+    display: flex;
+    flex-flow: row;
+    gap: 20px;
+    align-items: center;
+}
+
+.rewardsIcon {
+    font-size: 16px;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+@media only screen and (min-width: 1500px) {
+    .modal {
+        margin: 3rem 20%;
+        width: 60%;
+    }
+}

@@ -1,0 +1,28 @@
+.filter {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding-left: 20px;
+    margin: 0 10px 20px 10px;
+    border: solid 1px var(--altbackground);
+    background-color: var(--altbackground);
+    color: white;
+
+}
+
+.filter:hover,
+.filter:active {
+    cursor: pointer;
+}
+
+.filterIconContainer {
+    display: flex;
+    padding: 15px;
+}
+
+.filterIcon {
+    font-size: 20px;
+    background-color: var(--altbackground);
+}

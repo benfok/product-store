@@ -1,0 +1,74 @@
+.byDateResultsRow {
+    display: grid;
+    grid-template-columns: 396px 84px 84px 84px 84px 84px 84px 84px;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.byDateResultsRow:first-child {
+    margin-top: 20px;
+}
+
+.productTableCard {
+    border: solid 1px #dddddd;
+    margin: 0;
+    padding: 10px;
+}
+
+.pricingCell {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    border: solid 1px #dddddd;
+}
+
+
+.cellAvailable {
+    color: var(--primaryheading);
+    font-weight: 700;
+}
+
+.cellSoldOut {
+    color: var(--secondaryfont);
+}
+
+.cellAvailable:hover,
+.cellAvailable:active,
+.cellAvailable:hover .cellRewardsRate,
+.cellAvailable:active .cellRewardsRate  {
+    background-color: green;
+    color: white;
+    cursor: pointer;
+}
+
+.cellSoldOut:hover {
+    background-color: red;
+    color: white;
+    
+}
+
+.cellUnavailable {
+    background-color: #eee;
+}
+
+.cellRewardsRate {
+    display: flex;
+    color: #161D65;
+    margin-top: 5px;
+    vertical-align: middle;
+    font-size: 85%; 
+}
+
+.pricingDate {
+    font-size: 75%;
+    font-weight: 100;
+    margin-bottom: 0.5rem;
+}
+
+@media only screen and (min-width: 1200px) {
+    .byDateResultsRow {
+        grid-template-columns: 396px 110px 110px 110px 110px 110px 110px 110px;
+    }
+}
+

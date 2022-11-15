@@ -1,0 +1,69 @@
+.hideUnavailableContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* custom checkbox */
+    .hideUnavailableLabel {
+        width: 40px;
+        height: 30px;
+    }
+ 
+  /* Hide the browser's default checkbox */
+  .hideUnavailableLabel input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .custom-checkbox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 30px;
+    width: 30px;
+    border: solid 1px var(--primaryfont);
+    background-color: #eee;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .custom-checkbox:hover {
+    background-color: #ccc;
+    cursor: pointer;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .hideUnavailableLabel input:checked ~ .custom-checkbox {
+    background-color: var(--altbackground);
+    border-color: var(--altbackground);
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .custom-checkbox:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .hideUnavailableLabel input:checked ~ .custom-checkbox:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .hideUnavailableLabel .custom-checkbox:after {
+    left: 10px;
+    top: 2px;
+    width: 6px;
+    height: 15px;
+    border: solid var(--bodybg);
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
