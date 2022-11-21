@@ -1,3 +1,11 @@
+.noResultsMessage {
+    font-size: 100%;
+    margin: 20px 0;
+    text-align: center;
+    width: 100%;
+    color: var(--errortext)
+}
+
 .byDateResultsRow {
     display: grid;
     grid-template-columns: 396px 84px 84px 84px 84px 84px 84px 84px;

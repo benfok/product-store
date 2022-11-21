@@ -55,11 +55,11 @@
 }
 
 .rewardsContainer div:first-child {
-    padding: 0 5px;
+    padding-left: 8px;
     display: flex;
     align-items: center;
     color: white;
-    font-weight: 600;
+    font-weight: 700;
     background-color: #EE6D0E;
 }
 
@@ -80,6 +80,7 @@
     display: flex;
     align-items: flex-end;
     font-size: 16px;
+    font-weight: 700;
 }
 
 .rewardsBarTextContainer p:nth-child(2) {
@@ -91,6 +92,11 @@
 .rewardsinfoIcon {
     font-size: 18px;
     margin-left: 10px;
+}
+
+.productTable {
+    min-height: 30vh;
+    padding-top: 10px;
 }
 
 @media only screen and (min-width: 1080px) {
@@ -108,7 +114,7 @@
         padding-left: 10px;
     }
 
-    .hideUnavailableContainer {
+    .sortContainer .checkboxContainer {
         order: 2;
     }
 

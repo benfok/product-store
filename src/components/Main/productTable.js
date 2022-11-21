@@ -1,13 +1,16 @@
 import React, {useContext} from 'react';
 import CompareContext from '../../contexts/CompareContext';
+import ModalContext from '../../contexts/ModalContext';
 import { IconContext } from 'react-icons/lib';
 import { FaMountain } from 'react-icons/fa';
 import '../../styles/productTable.css';
 const productData = require('../../data/productData.json');
 
-const ProductTable = ({dateIndex, hideUnavailable, selected, togglePurchaseModal, activeTab}) => {
+const ProductTable = ({dateIndex, hideUnavailable, selected, activeTab}) => {
   
     const {comparisons, toggleComparisons} = useContext(CompareContext);
+    const {togglePurchaseModal} = useContext(ModalContext); 
+
     let productsToMap = []
 
     activeTab === "by date" ? productsToMap = productData : productsToMap = comparisons;
@@ -23,15 +26,11 @@ const ProductTable = ({dateIndex, hideUnavailable, selected, togglePurchaseModal
 
         if (activeTab === 'by date') {
             return (
-                <div>
-                    <p>No results returned</p>
-                </div>
+                    <p className="noResultsMessage">No results returned</p>
             )
         } else {
             return (
-                <div>
-                    <p>Please select products for comparison</p>
-                </div>
+                    <p className="noResultsMessage">Please select products for comparison</p>
             )
         }
     }

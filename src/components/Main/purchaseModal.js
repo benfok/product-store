@@ -1,16 +1,18 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
+import ModalContext from '../../contexts/ModalContext';
 import { IconContext } from 'react-icons/lib';
 import { GrClose } from 'react-icons/gr';
 import { FaMountain } from 'react-icons/fa';
 import '../../styles/purchaseModal.css';
 
-const PurchaseModal = ({togglePurchaseModal, product, date}) => {
+const PurchaseModal = ({product, date}) => {
 
     const [participants, setParticipants] = useState("participants-1")
     const [days, setDays] = useState(["days-1", 1]);
     const [location, setLocation] = useState("location-1")
     const [groupAddOns, setGroupAddOns] = useState([]);
     const [totalPrice, setTotalPrice] = useState([product.priceOnline, product.priceOnline * 0.8])
+    const {togglePurchaseModal} = useContext(ModalContext); 
 
     // handle updates to state for # of participants (private lessons)
     const changeParticipants = (event) => {
@@ -86,7 +88,7 @@ const PurchaseModal = ({togglePurchaseModal, product, date}) => {
                     <div className="productHeaderModal">
                         <h3>{product.productName}</h3>
                     </div>
-                    <div className="productCopyContainer">
+                    <div className="productContainer">
                         <div className="prodCopyContainerItem">
                             <div className="prodAttributesModal">
                                 <div>
@@ -116,7 +118,7 @@ const PurchaseModal = ({togglePurchaseModal, product, date}) => {
                                 <li>Key Point 5 - Lorem ipsum dolor sit amet</li>
                             </ul>
                         </div>
-                        <div className="prodCopyContainerItem">
+                        <div className="prodConfigContainer">
                             <h4>DATE OF LESSON:</h4>
                             <div className="modalDate">
                                 {new Intl.DateTimeFormat('en-US', dateOptions).format(date)}

@@ -7,13 +7,13 @@ import ProductCardContainerMobile from './productCardContainerMobile';
 import ProductTable from './productTable';
 import 'react-datepicker/dist/react-datepicker.css';
 import '../../styles/datePicker.css';
-import '../../styles/hideCheckbox.css';
+import '../../styles/checkbox.css';
 import { IconContext } from 'react-icons/lib';
 import { BsCalendar3 } from 'react-icons/bs';
 import { FaMountain } from 'react-icons/fa';
 import { FaInfoCircle } from 'react-icons/fa';
 
-const SearchWidget = ({selectedDate, setSelectedDate, startDate, endDate, dateIndex, setDateIndex, togglePurchaseModal, activeTab}) => {
+const SearchWidget = ({selectedDate, setSelectedDate, startDate, endDate, dateIndex, setDateIndex, activeTab}) => {
 
     const isMobile = useMedia('(max-width: 1080px)');
 
@@ -74,10 +74,10 @@ const SearchWidget = ({selectedDate, setSelectedDate, startDate, endDate, dateIn
                             Look for the icon on eligible products</p>
                     </div>
                 </div>
-                <div className="hideUnavailableContainer">
-                    <label className="hideUnavailableLabel" >
+                <div className="checkboxContainer">
+                    <label className="checkboxLabel" >
                         <input type="checkbox" id="hideUnavailable" defaultChecked={false} className="hideUnavailableCheckbox"/>
-                        <span className='custom-checkbox'  onClick={toggleChecked} ></span>
+                        <span className='custom-checkbox'  onClick={event => toggleChecked(event)} ></span>
                     </label>
                     <p className="">
                         Hide Unavailable
@@ -89,13 +89,16 @@ const SearchWidget = ({selectedDate, setSelectedDate, startDate, endDate, dateIn
                 hideUnavailable = {hideUnavailable}
                 activeTab = {activeTab}
             /> }
-            {!isMobile && <ProductTable
-                selected={selectedDate}
-                dateIndex = {dateIndex}
-                hideUnavailable = {hideUnavailable}
-                togglePurchaseModal={togglePurchaseModal}
-                activeTab = {activeTab}
-            /> }
+            {!isMobile && 
+                <section className="productTable">
+                    <ProductTable
+                    selected={selectedDate}
+                    dateIndex = {dateIndex}
+                    hideUnavailable = {hideUnavailable}
+                    activeTab = {activeTab}
+                    />
+                </section> 
+            }
         </div>
     )
 

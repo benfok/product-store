@@ -1,0 +1,25 @@
+footer {
+    background-color: #333333;
+    margin-top: 100px;
+    height: 150px;
+    padding: 20px 0;
+    color: #CCCCCC;
+}
+
+footer img {
+    position: absolute;
+    top: -32px;
+    width: 300px;
+    right: 0;
+}
+
+.footerContentContainer {
+    margin: 0 20px;
+}
+
+@media only screen and (min-width: 1200px) {
+    .footerContentContainer {
+        width: 1180px;
+        margin: auto;
+    }
+}

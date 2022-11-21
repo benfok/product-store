@@ -5,7 +5,7 @@
     align-items: center;
     gap: 20px;
     padding-left: 20px;
-    margin: 0 10px 20px 10px;
+    margin: 0 10px 0px 10px;
     border: solid 1px var(--altbackground);
     background-color: var(--altbackground);
     color: white;
@@ -25,4 +25,22 @@
 .filterIcon {
     font-size: 20px;
     background-color: var(--altbackground);
+}
+
+.filterOptionsContainer {
+    border: solid 1px var(--altbackground);
+    padding: 10px 20px;
+    margin: 0 10px 20px 10px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.filterOption {
+    height: 100%;
+}
+
+.filterOption h4 {
+    margin-bottom: 10px;
 }

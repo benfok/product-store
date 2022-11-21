@@ -1,18 +1,26 @@
-.hideUnavailableContainer {
+.checkboxContainer {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+.checkboxContainer-left {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
 /* custom checkbox */
-    .hideUnavailableLabel {
+    .checkboxLabel {
         width: 40px;
         height: 30px;
     }
  
   /* Hide the browser's default checkbox */
-  .hideUnavailableLabel input {
+  .checkboxLabel input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
@@ -38,7 +46,7 @@
   }
   
   /* When the checkbox is checked, add a blue background */
-  .hideUnavailableLabel input:checked ~ .custom-checkbox {
+  .checkboxLabel input:checked ~ .custom-checkbox {
     background-color: var(--altbackground);
     border-color: var(--altbackground);
   }
@@ -51,12 +59,12 @@
   }
   
   /* Show the checkmark when checked */
-  .hideUnavailableLabel input:checked ~ .custom-checkbox:after {
+  .checkboxLabel input:checked ~ .custom-checkbox:after {
     display: block;
   }
   
   /* Style the checkmark/indicator */
-  .hideUnavailableLabel .custom-checkbox:after {
+  .checkboxLabel .custom-checkbox:after {
     left: 10px;
     top: 2px;
     width: 6px;
