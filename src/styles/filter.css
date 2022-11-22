@@ -30,7 +30,7 @@
 .filterOptionsContainer {
     border: solid 1px var(--altbackground);
     padding: 10px 20px;
-    margin: 0 10px 20px 10px;
+    margin: 0 10px;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
@@ -41,6 +41,24 @@
     height: 100%;
 }
 
-.filterOption h4 {
+.filterOption div:first-child {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
     margin-bottom: 10px;
+}
+
+.filterInfoIcon {
+    color: var(--altbackground);
+    font-size: 20px;
+}
+
+.filterInfoIcon:hover,
+.filterInfoIcon:active {
+    cursor: pointer;
+}
+
+.filterHidden {
+    display: none;
 }

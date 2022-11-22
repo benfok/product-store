@@ -1,19 +1,20 @@
 import React, {useContext} from 'react';
 import CompareContext from '../../contexts/CompareContext';
 import ModalContext from '../../contexts/ModalContext';
+import ProductContext from '../../contexts/ProductContext';
 import { IconContext } from 'react-icons/lib';
 import { FaMountain } from 'react-icons/fa';
 import '../../styles/productTable.css';
-const productData = require('../../data/productData.json');
 
 const ProductTable = ({dateIndex, hideUnavailable, selected, activeTab}) => {
   
     const {comparisons, toggleComparisons} = useContext(CompareContext);
     const {togglePurchaseModal} = useContext(ModalContext); 
+    const {filteredProductData} = useContext(ProductContext);
 
     let productsToMap = []
 
-    activeTab === "by date" ? productsToMap = productData : productsToMap = comparisons;
+    activeTab === "by date" ? productsToMap = filteredProductData : productsToMap = comparisons;
     
     // define date format for displaying in pricing cells
     const dateOptions = {

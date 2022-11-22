@@ -5,13 +5,14 @@ import Filter from './filter';
 import Sort from './sort';
 import ProductCardContainerMobile from './productCardContainerMobile';
 import ProductTable from './productTable';
-import 'react-datepicker/dist/react-datepicker.css';
-import '../../styles/datePicker.css';
-import '../../styles/checkbox.css';
+import { ProductProvider } from '../../contexts/ProductContext';
 import { IconContext } from 'react-icons/lib';
 import { BsCalendar3 } from 'react-icons/bs';
 import { FaMountain } from 'react-icons/fa';
 import { FaInfoCircle } from 'react-icons/fa';
+import 'react-datepicker/dist/react-datepicker.css';
+import '../../styles/datePicker.css';
+import '../../styles/checkbox.css';
 
 const SearchWidget = ({selectedDate, setSelectedDate, startDate, endDate, dateIndex, setDateIndex, activeTab}) => {
 
@@ -84,21 +85,23 @@ const SearchWidget = ({selectedDate, setSelectedDate, startDate, endDate, dateIn
                     </p>
                 </div>
             </div>
-            {isMobile && <ProductCardContainerMobile
-                dateIndex = {dateIndex}
-                hideUnavailable = {hideUnavailable}
-                activeTab = {activeTab}
-            /> }
-            {!isMobile && 
-                <section className="productTable">
-                    <ProductTable
-                    selected={selectedDate}
+            <ProductProvider>
+                {isMobile && <ProductCardContainerMobile
                     dateIndex = {dateIndex}
                     hideUnavailable = {hideUnavailable}
                     activeTab = {activeTab}
-                    />
-                </section> 
-            }
+                /> }
+                {!isMobile && 
+                    <section className="productTable">
+                        <ProductTable
+                        selected={selectedDate}
+                        dateIndex = {dateIndex}
+                        hideUnavailable = {hideUnavailable}
+                        activeTab = {activeTab}
+                        />
+                    </section> 
+                }
+            </ProductProvider>
         </div>
     )
 

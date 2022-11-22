@@ -8,18 +8,24 @@
     margin: 0 5px 5px 5px;
     border: solid 1px var(--altbackground);
     border-top: none;
+    border-radius: 0 0 5px 5px;
 }
 
 .searchByBtn {
-    background-color: var(--altbackground);
-    color: white;
+    background-color: #eeeeee;
+    color: var(--primaryfont);
     height: 100px;
     width: 50%;
     display: inline-block;
     font-size: 120%;
     padding: 20px;
     border: solid 1px var(--altbackground);
-    border-bottom: none;
+    border-radius: 5px 0 0 0;
+}
+
+.searchByBtn:nth-child(2) {
+    border-left: none;
+    border-radius: 0 5px 0 0;
 }
 
 .searchByBtn:hover {
@@ -30,13 +36,14 @@
     background-color: var(--bodybg);
     color: var(--primaryfont);
     width: 50%;
+    border-bottom: none;
 }
 
 .sortContainer {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    margin: 0 10px 20px 10px;
+    margin: 20px 10px;
     gap: 20px;
 }
 
