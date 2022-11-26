@@ -27,10 +27,15 @@
     background-color: var(--altbackground);
 }
 
-.filterOptionsContainer {
+.filterContainer {
     border: solid 1px var(--altbackground);
     padding: 10px 20px;
     margin: 0 10px;
+    display: flex;
+    flex-flow: column;
+}
+
+.filterOptionsContainer {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
@@ -61,4 +66,12 @@
 
 .filterHidden {
     display: none;
+}
+
+.filterButtonContainer {
+    margin: 20px 0 0 auto;
+    width: 50%;
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 10px;
 }

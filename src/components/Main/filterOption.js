@@ -1,4 +1,4 @@
-import { React, useContext } from 'react';
+import { React, useState, useContext, useEffect } from 'react';
 import ProductContext from '../../contexts/ProductContext';
 import { IconContext } from 'react-icons/lib';
 import { FaInfoCircle } from 'react-icons/fa';
@@ -6,89 +6,37 @@ import '../../styles/filter.css'
 
 // const productData = require('../../data/productData.json');
 
-const removeItem = (array, value) => {
-    return array.filter(item => {
-        return item !== value;
-    })
-}
+// const removeItem = (array, value) => {
+//     return array.filter(item => {
+//         return item !== value;
+//     })
+// }
 
-const FilterOption = ({field, fieldName, sortType}) => {
+const FilterOption = ({field, fieldName}) => {
     
-    const {lessonTypeFilter, setLessonTypeFilter} = useContext(ProductContext);
-
-    const adjustLessonType = (value) => {
-
-        if (lessonTypeFilter.includes(value)) {
-            const newArray = removeItem(lessonTypeFilter, value);
-            setLessonTypeFilter(newArray);
-        } else {
-            const newArray = [...lessonTypeFilter, value];
-            setLessonTypeFilter(newArray);
-        }
+    const filterChoices = {
+        productType: ["Private", "Group"],
+        discipline: ["Ski", "Snowboard"],
+        startTime: ['9:00AM', '9:30AM', '1:00PM', '1:30PM'],
+        abilityLevels: ['First Time', 'Beginner', 'Intermediate', 'Advanced'],
+        locations: ["Lionshead", "Vail Village", "Golden Peak"],
     };
 
     let dataList = null;
 
-    if (sortType === 'lessonType') {
-            // const data = [...new Set(productData.map(product => product[field]))]; // array of unique values based on the field passed in
-            const data = ["Private", "Group"]
-            dataList= data.map(value => {
-                return (
-                    <div className="checkboxContainer-left" key={value}>
-                        <label className="checkboxLabel" >
-                            <input type="checkbox" defaultChecked={false}/>
-                            <span className='custom-checkbox'  onClick={() => adjustLessonType(value)} ></span>
-                        </label>
-                        <p>{value}</p>
-                    </div>
-                )
-            })
-    }
-
-    if (sortType === 'time') {
-        const times = ['9:00AM', '9:30AM', '1:00PM', '1:30PM'];
-        dataList= times.map(value => {
-            return (
-                <div className="checkboxContainer-left" key={value}>
-                    <label className="checkboxLabel" >
-                        <input type="checkbox" defaultChecked={false}/>
-                        <span className='custom-checkbox'></span>
-                    </label>
-                    <p>{value}</p>
-                </div>
-            )
-        })
-    }
-
-    if (sortType === 'ability') {
-        const levels = ['First Time', 'Beginner', 'Intermediate', 'Advanced'];
-        dataList= levels.map(value => {
-            return (
-                <div className="checkboxContainer-left" key={value}>
-                    <label className="checkboxLabel" >
-                        <input type="checkbox" defaultChecked={false}/>
-                        <span className='custom-checkbox' ></span>
-                    </label>
-                    <p>{value}</p>
-                </div>
-            )
-        })
-    }
-
-    if (sortType === 'location') {
-        const locations = ["Lionshead", "Vail Village", "Golden Peak"];
-        dataList= locations.map(value => {
-            return (
-                <div className="checkboxContainer-left" key={value}>
-                    <label className="checkboxLabel" >
-                        <input type="checkbox" defaultChecked={false}/>
-                        <span className='custom-checkbox' ></span>
-                    </label>
-                    <p>{value}</p>
-                </div>
-            )
-        })
-    }
+        // const data = [...new Set(productData.map(product => product[field]))]; // alternative that would create an array of unique values based on the field passed in rahter than having static values stored here
+    const data = filterChoices[field];
+    dataList= data.map(value => {
+        return (
+            <div className="checkboxContainer-left" key={value}>
+                <label className="checkboxLabel" >
+                    <input data-field={field} data-value={value} type="checkbox" defaultChecked={false} className="filterCheckbox"/>
+                    <span className='custom-checkbox'></span>
+                </label>
+                <p>{value}</p>
+            </div>
+        )
+    })
 
         return (
             <div className="filterOption" key={field}>

@@ -1,4 +1,4 @@
-import React from 'react';
+import { React, useState } from 'react';
 import '../../styles/sort.css';
 import { IconContext } from 'react-icons/lib';
 import { TbArrowsSort } from 'react-icons/tb'

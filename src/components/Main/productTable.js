@@ -12,7 +12,7 @@ const ProductTable = ({dateIndex, hideUnavailable, selected, activeTab}) => {
     const {togglePurchaseModal} = useContext(ModalContext); 
     const {filteredProductData} = useContext(ProductContext);
 
-    let productsToMap = []
+    let productsToMap = filteredProductData;
 
     activeTab === "by date" ? productsToMap = filteredProductData : productsToMap = comparisons;
     

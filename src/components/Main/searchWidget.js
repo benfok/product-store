@@ -5,7 +5,6 @@ import Filter from './filter';
 import Sort from './sort';
 import ProductCardContainerMobile from './productCardContainerMobile';
 import ProductTable from './productTable';
-import { ProductProvider } from '../../contexts/ProductContext';
 import { IconContext } from 'react-icons/lib';
 import { BsCalendar3 } from 'react-icons/bs';
 import { FaMountain } from 'react-icons/fa';
@@ -85,23 +84,21 @@ const SearchWidget = ({selectedDate, setSelectedDate, startDate, endDate, dateIn
                     </p>
                 </div>
             </div>
-            <ProductProvider>
-                {isMobile && <ProductCardContainerMobile
+            {isMobile && <ProductCardContainerMobile
+                dateIndex = {dateIndex}
+                hideUnavailable = {hideUnavailable}
+                activeTab = {activeTab}
+            /> }
+            {!isMobile && 
+                <section className="productTable">
+                    <ProductTable
+                    selected={selectedDate}
                     dateIndex = {dateIndex}
                     hideUnavailable = {hideUnavailable}
                     activeTab = {activeTab}
-                /> }
-                {!isMobile && 
-                    <section className="productTable">
-                        <ProductTable
-                        selected={selectedDate}
-                        dateIndex = {dateIndex}
-                        hideUnavailable = {hideUnavailable}
-                        activeTab = {activeTab}
-                        />
-                    </section> 
-                }
-            </ProductProvider>
+                    />
+                </section> 
+            }
         </div>
     )
 
