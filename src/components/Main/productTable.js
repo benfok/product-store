@@ -8,10 +8,12 @@ import '../../styles/productTable.css';
 
 const ProductTable = ({dateIndex, hideUnavailable, selected, activeTab}) => {
   
+    // pull in comparison products, toggle for the modal and the product data
     const {comparisons, toggleComparisons} = useContext(CompareContext);
     const {togglePurchaseModal} = useContext(ModalContext); 
     const {filteredProductData} = useContext(ProductContext);
 
+    // the products being mapped and rendered are the product data (post filter) by default. If the active tab is switched to compare products, the source data is switched to the products stored in the comparisons state object
     let productsToMap = filteredProductData;
 
     activeTab === "by date" ? productsToMap = filteredProductData : productsToMap = comparisons;
@@ -23,6 +25,7 @@ const ProductTable = ({dateIndex, hideUnavailable, selected, activeTab}) => {
         day:'numeric'
     }
 
+    // handle if the source product data object is empty
     if (productsToMap.length < 1) {
 
         if (activeTab === 'by date') {
@@ -37,12 +40,12 @@ const ProductTable = ({dateIndex, hideUnavailable, selected, activeTab}) => {
     }
 
     else {
-        // console.log(productData);
-
+        // map through product data and render products
         const productCards = productsToMap.map((product, index) => {
 
             let isCompared = false;
 
+            // determine if the product being mapped is currently selected for comparison. This determines what button is displayed: to add to or remove from comparison
             for (let i=0; i < comparisons.length; i++) {
                 if(comparisons[i].productCode === product.productCode){
                     isCompared = true;
@@ -51,10 +54,11 @@ const ProductTable = ({dateIndex, hideUnavailable, selected, activeTab}) => {
                 }
             }
 
+            // if the product is unavailable for the selected date, and the Hide Unavailable checkbox is checked, do not display it
             if(!product.twoWeekAvailability[dateIndex] && hideUnavailable)
                 return null
             else {
-
+                // creates a temp array of the next 7 day availability for the product (simulates an inventory call)
                 const availabilityArray = product.twoWeekAvailability.slice(dateIndex, dateIndex + 7);
 
                 if (availabilityArray.length < 7) {

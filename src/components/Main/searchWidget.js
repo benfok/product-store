@@ -15,10 +15,13 @@ import '../../styles/checkbox.css';
 
 const SearchWidget = ({selectedDate, setSelectedDate, startDate, endDate, dateIndex, setDateIndex, activeTab}) => {
 
+    // use the isMobile hook to specfiy the screen width that would trigger mobile styling
     const isMobile = useMedia('(max-width: 1080px)');
 
+    // status for whether the Hide Unavailable checkbox is checked or not
     const [hideUnavailable, setHideUnavailable] = useState(false);
 
+    // custom input (styling and format) for the react-datepicker
     const DatePickerCustomInput = forwardRef(({value, onClick}, ref) => (
         <div className="datePicker" onClick={onClick} ref={ref}>
             <div className="datePickerIconContainer">
@@ -32,11 +35,13 @@ const SearchWidget = ({selectedDate, setSelectedDate, startDate, endDate, dateIn
         </div>
     ))
 
+    // updates state with the new selected date from the date picker, and also sets the date index
     const dateChange = (date) => {
         setSelectedDate(date);
         setDateIndex(Math.abs(Math.round((date - startDate) / (1000 * 3600 * 24))));  // assign a date index that equals the number of days between the chosen and the start date. This allows me to use the simplified two week availability array in the json file to simulate inventory validation. This function takes the absolute number after rounding the result of the date difference in milliseconds, converted to days
     }
 
+    // toggles the hide unavailable check box status
     const toggleChecked = (event) => {
         event.stopPropagation();
         setHideUnavailable(!hideUnavailable);

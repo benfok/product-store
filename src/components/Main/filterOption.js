@@ -1,19 +1,12 @@
-import { React, useState, useContext, useEffect } from 'react';
-import ProductContext from '../../contexts/ProductContext';
+import React from 'react';
 import { IconContext } from 'react-icons/lib';
 import { FaInfoCircle } from 'react-icons/fa';
 import '../../styles/filter.css'
 
-// const productData = require('../../data/productData.json');
-
-// const removeItem = (array, value) => {
-//     return array.filter(item => {
-//         return item !== value;
-//     })
-// }
-
 const FilterOption = ({field, fieldName}) => {
-    
+    // this component takes in a field and maps out the list of options from the filterChoices object below.
+
+    // object containing all the filter options. These are hard coded here for the purpose of this demo versus being dynamically pulled from the product data.
     const filterChoices = {
         productType: ["Private", "Group"],
         discipline: ["Ski", "Snowboard"],
@@ -24,7 +17,7 @@ const FilterOption = ({field, fieldName}) => {
 
     let dataList = null;
 
-        // const data = [...new Set(productData.map(product => product[field]))]; // alternative that would create an array of unique values based on the field passed in rahter than having static values stored here
+    // const data = [...new Set(productData.map(product => product[field]))]; // alternative that would create an array of unique values based on the field passed in rather than having static values stored here
     const data = filterChoices[field];
     dataList= data.map(value => {
         return (
