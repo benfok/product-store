@@ -1,27 +1,63 @@
-import { createContext, useEffect, useState } from 'react';
+import { createContext, useState } from 'react';
 
 const ProductContext = createContext();
 
 export function ProductProvider({children}){
     
+    // pull in base data
     const productData = require('../data/productData.json');
 
+    const [sortValue, setSortValue] = useState('default');
     const [filteredProductData, setFilteredProductData] = useState(productData)
 
+    // run through the filter object and apply each filter in turn to filter the data. Then sort the data array if a sort option is selected
     const applyFilterObject = async (filterObject) => {
         const disciplineFiltered = await disciplineFilter(filterObject, productData);
         const productFiltered = await productFilter(filterObject, disciplineFiltered);
         const abilityFiltered = await abilityFilter(filterObject, productFiltered);
         const locationFiltered = await locationFilter(filterObject, abilityFiltered);
         const startTimeFiltered = await startTimeFilter(filterObject, locationFiltered);
-        setFilteredProductData(startTimeFiltered);
+        const sortedData = await sortData(startTimeFiltered, sortValue)
+        setFilteredProductData(sortedData);
     }
 
-    useEffect(() => {
-        console.log(filteredProductData);
-    }, [filteredProductData]);
+    // function to handle a change in the sort selection dropdown
+    const sortOptionChanged = (value) => {
+        setSortValue(value)
+        async function sort(){
+            const sortedData = await sortData(filteredProductData, value);
+            setFilteredProductData(sortedData);
+        }
+        sort();
+    }    
 
+    // sort the product data based on the sort option selected. 
+    const sortData = async (data, value) => {
+       
+        const dataToSort = data
+
+        switch (value){
+            case 'sort-price-desc':
+                dataToSort.sort((a, b) => (a.priceOnline > b.priceOnline) ? -1 : (a.priceOnline === b.priceOnline) ? ((a.productCode > b.productCode) ? 1 : -1) : 1);
+                break; 
+            case 'sort-price-asc':
+                dataToSort.sort((a, b) => (a.priceOnline > b.priceOnline) ? 1 : (a.priceOnline === b.priceOnline) ? ((a.productCode > b.productCode) ? 1 : -1) : -1);
+                break; 
+            case 'sort-time-asc':
+                dataToSort.sort((a, b) => (a.startTimeValue > b.startTimeValue) ? 1 : (a.startTimeValue === b.startTimeValue) ? ((a.productCode > b.productCode) ? 1 : -1) : -1);
+                break; 
+            case 'sort-time-desc':
+                dataToSort.sort((a, b) => (a.startTimeValue > b.startTimeValue) ? -1 : (a.startTimeValue === b.startTimeValue) ? ((a.productCode > b.productCode) ? 1 : -1) : 1);
+                break; 
+            default:
+                dataToSort.sort((a, b) => (a.productCode > b.productCode) ? 1 : -1);
+                break;
+        }
+
+        return dataToSort;
+    }
     
+    // the filter functions run through the product data and filter according to the option(s) selected
     const disciplineFilter = async (filterObject, data) => {
   
         if (filterObject.discipline.length > 0) {
@@ -90,7 +126,7 @@ export function ProductProvider({children}){
     }
 
     return (
-        <ProductContext.Provider value={{filteredProductData, applyFilterObject}}>
+        <ProductContext.Provider value={{filteredProductData, applyFilterObject, sortOptionChanged}}>
             {children}
         </ProductContext.Provider>
     )

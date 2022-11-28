@@ -59,7 +59,7 @@ const SearchWidget = ({selectedDate, setSelectedDate, startDate, endDate, dateIn
                 customInput={<DatePickerCustomInput />}
             />
             <Filter />
-            <div className="sortContainer">              
+            <div className="configContainer">              
                 <Sort />
                 <div className="rewardsContainer">
                     <div>
@@ -85,7 +85,7 @@ const SearchWidget = ({selectedDate, setSelectedDate, startDate, endDate, dateIn
                         <span className='custom-checkbox'  onClick={event => toggleChecked(event)} ></span>
                     </label>
                     <p className="">
-                        Hide Unavailable
+                        Hide If Unavailable<br/>For Date Selected
                     </p>
                 </div>
             </div>

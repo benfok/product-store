@@ -1,3 +1,8 @@
+
+.sortContainer {
+    width: 100%;
+}
+
 .sort {
     display: flex;
     flex-flow: row nowrap;
@@ -8,7 +13,7 @@
     border: solid 1px var(--altbackground);
     background-color: var(--bodybg);
     color: var(--primaryfont);
-
+    height: 52px;
 }
 
 .sort:hover,
@@ -23,4 +28,29 @@
 
 .sortIcon {
     font-size: 20px;
+}
+
+.sortOptionsContainer {
+    width: 100%;
+    position: absolute;
+    top: 52px;
+    border: solid 1px var(--altbackground);
+    border-top: none;
+    background-color: var(--bodybg);
+    z-index: 1;
+}
+
+.sortOption {
+    padding: 10px;
+}
+
+.sortOption:hover,
+.sortOption:active {
+    cursor: pointer;
+    background-color: var(--altbackground);
+    color: var(--bodybg);
+}
+
+.sortHidden {
+    display: none;
 }

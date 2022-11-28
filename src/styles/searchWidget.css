@@ -39,17 +39,12 @@
     border-bottom: none;
 }
 
-.sortContainer {
+.configContainer {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
     margin: 20px 10px;
     gap: 20px;
-}
-
-.sort {
-    width: 100%;
-
 }
 
 .rewardsContainer {
@@ -107,7 +102,7 @@
 }
 
 @media only screen and (min-width: 1080px) {
-    .sortContainer {
+    .configContainer {
         flex-flow: row;
     }
 
@@ -121,11 +116,11 @@
         padding-left: 10px;
     }
 
-    .sortContainer .checkboxContainer {
+    .configContainer .checkboxContainer {
         order: 2;
     }
 
-    .sort {
+    .sortContainer {
         order: 3;
     }
 }
