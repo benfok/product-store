@@ -12,7 +12,8 @@ export function ProductProvider({children}){
 
     // run through the filter object and apply each filter in turn to filter the data. Then sort the data array if a sort option is selected
     const applyFilterObject = async (filterObject) => {
-        const disciplineFiltered = await disciplineFilter(filterObject, productData);
+        const ageFiltered = await ageFilter(filterObject, productData);
+        const disciplineFiltered = await disciplineFilter(filterObject, ageFiltered);
         const productFiltered = await productFilter(filterObject, disciplineFiltered);
         const abilityFiltered = await abilityFilter(filterObject, productFiltered);
         const locationFiltered = await locationFilter(filterObject, abilityFiltered);
@@ -58,6 +59,13 @@ export function ProductProvider({children}){
     }
     
     // the filter functions run through the product data and filter according to the option(s) selected
+    const ageFilter = async (filterObject, data) => {
+        if (filterObject.age.length > 0) {
+            return data
+        }
+        return data
+    }
+
     const disciplineFilter = async (filterObject, data) => {
   
         if (filterObject.discipline.length > 0) {

@@ -65,6 +65,10 @@
     background-color: #EE6D0E;
 }
 
+.rewardsContainer:hover {
+    cursor: pointer;
+}
+
 .rewardsBarAngle {
     width: 0;
     height: inherit;

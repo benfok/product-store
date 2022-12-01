@@ -1,9 +1,8 @@
 import React, {useState, useEffect, useContext} from 'react';
 import ModalContext from '../../contexts/ModalContext';
 import { IconContext } from 'react-icons/lib';
-import { GrClose } from 'react-icons/gr';
 import { FaMountain } from 'react-icons/fa';
-import '../../styles/purchaseModal.css';
+import '../../styles/modal.css';
 
 const PurchaseModal = ({product, date}) => {
 
@@ -80,12 +79,8 @@ const PurchaseModal = ({product, date}) => {
     }
 
         return (
-            <div className="modalOuter" id="modal-wrapper" onClick={event => togglePurchaseModal(event)}>
-                <section className='modal purchaseModal' onClick={event => {event.stopPropagation();}}>
-                    <div className="modalCloseIcon" onClick={event => togglePurchaseModal(event)}>
-                        <GrClose />
-                    </div>
-                    <div className="productHeaderModal">
+                <>
+                    <div className="modalHeader">
                         <h3>{product.productName}</h3>
                     </div>
                     <div className="productContainer">
@@ -250,9 +245,8 @@ const PurchaseModal = ({product, date}) => {
                             }
                         </div>
                     </div>
-                </section>
-            </div>
-        )
+                </>
+            )
 }
 
 export default PurchaseModal;

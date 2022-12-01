@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { IconContext } from 'react-icons/lib';
 import { FaInfoCircle } from 'react-icons/fa';
+import ModalContext from '../../contexts/ModalContext';
 import '../../styles/filter.css'
 
 const FilterOption = ({field, fieldName}) => {
@@ -8,6 +9,7 @@ const FilterOption = ({field, fieldName}) => {
 
     // object containing all the filter options. These are hard coded here for the purpose of this demo versus being dynamically pulled from the product data.
     const filterChoices = {
+        age: ["3-6", "7-14", "15-18", "18+"],
         productType: ["Private", "Group"],
         discipline: ["Ski", "Snowboard"],
         startTime: ['9:00AM', '9:30AM', '1:00PM', '1:30PM'],
@@ -31,13 +33,17 @@ const FilterOption = ({field, fieldName}) => {
         )
     })
 
+    const {toggleInfoModal} = useContext(ModalContext);
+
         return (
             <div className="filterOption" key={field}>
                 <div>
-                    <h4>{fieldName}</h4>
-                    <IconContext.Provider value={{ className: "filterInfoIcon"}}>
-                        <FaInfoCircle />
-                    </IconContext.Provider>
+                    <h4>{fieldName}</h4>                   
+                    <div onClick={() => toggleInfoModal(field)}>
+                        <IconContext.Provider value={{ className: "filterInfoIcon"}} >
+                            <FaInfoCircle />
+                        </IconContext.Provider>
+                    </div>
                 </div>
                 {dataList}
             </div>

@@ -1,4 +1,4 @@
-import React, {forwardRef, useState} from 'react';
+import React, {forwardRef, useContext, useState} from 'react';
 import useMedia from '../../hooks/useMedia';
 import DatePicker from 'react-datepicker';
 import Filter from './filter';
@@ -12,6 +12,7 @@ import { FaInfoCircle } from 'react-icons/fa';
 import 'react-datepicker/dist/react-datepicker.css';
 import '../../styles/datePicker.css';
 import '../../styles/checkbox.css';
+import ModalContext from '../../contexts/ModalContext';
 
 const SearchWidget = ({selectedDate, setSelectedDate, startDate, endDate, dateIndex, setDateIndex, activeTab}) => {
 
@@ -47,6 +48,9 @@ const SearchWidget = ({selectedDate, setSelectedDate, startDate, endDate, dateIn
         setHideUnavailable(!hideUnavailable);
     };
 
+    // provides access to the modal component for the rewards bar
+    const {toggleInfoModal} = useContext(ModalContext);
+
     return (
         <div>
             <DatePicker 
@@ -61,7 +65,7 @@ const SearchWidget = ({selectedDate, setSelectedDate, startDate, endDate, dateIn
             <Filter />
             <div className="configContainer">              
                 <Sort />
-                <div className="rewardsContainer">
+                <div className="rewardsContainer" onClick={() => toggleInfoModal('rewards')}>
                     <div>
                         SAVE
                     </div>
