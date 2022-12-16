@@ -23,6 +23,18 @@
     padding: 10px;
 }
 
+.productTableCard h3 {
+    font-size: 95%;
+    color: var(--primaryheading);
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.productTableCard h4 {
+    font-size: 65%;
+    text-transform: uppercase;
+}
+
 .pricingCell {
     display: flex;
     flex-flow: column nowrap;
@@ -72,6 +84,13 @@
     font-size: 75%;
     font-weight: 100;
     margin-bottom: 0.5rem;
+}
+
+@media only screen and (min-width: 998px) {
+    .productAttributeValue {
+        font-size: 80%;
+        color: var(--primaryfont);
+    }
 }
 
 @media only screen and (min-width: 1200px) {

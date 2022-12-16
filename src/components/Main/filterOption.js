@@ -9,7 +9,7 @@ const FilterOption = ({field, fieldName}) => {
 
     // object containing all the filter options. These are hard coded here for the purpose of this demo versus being dynamically pulled from the product data.
     const filterChoices = {
-        age: ["3-6", "7-14", "15-18", "18+"],
+        ageRange: ["3-6", "7-14", "15-19", "20+"],
         productType: ["Private", "Group"],
         discipline: ["Ski", "Snowboard"],
         startTime: ['9:00AM', '9:30AM', '1:00PM', '1:30PM'],

@@ -1,0 +1,49 @@
+.contentElement {
+    margin: 50px 20px;
+}
+
+.contentElementBackground {
+    position: absolute;
+    height: 100%;
+    width: 75%;
+    margin-left:25%;
+    /* transform: translate(25%, 0); */
+    background-color: #eeeeee;
+}
+
+.contentElementContainer {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.contentImageContainer {
+    /* max-width: 45%; */
+    flex: 0 0 45%;
+}
+
+.contentImageContainer img {
+    object-fit: contain;
+    width: 100%;
+    padding: 40px 0 20px 0;
+}
+
+.contentCopyContainer {
+    /* max-width: 55%; */
+    flex: 0 0 53%;
+    padding: 40px 20px;
+}
+
+.contentCopyContainer ul {
+    margin-left: 50px;
+    font-size: 90%;
+}
+
+@media only screen and (min-width: 1200px) {
+    .contentElement  {
+        width: 1180px;
+        margin: 50px auto;
+    }
+}

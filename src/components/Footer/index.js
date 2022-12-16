@@ -8,7 +8,11 @@ function Footer () {
         <footer>
             <img src={footerPic} />
             <div className="footerContentContainer">
-                <p>Resort Footer</p>
+                <div id="background">
+                    <div id="t"></div>
+                    <div id="l"></div>
+                </div>
+                <p>Tidy Lines Web Design</p>
             </div>
         </footer>
     )

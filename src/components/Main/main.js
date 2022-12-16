@@ -1,8 +1,10 @@
 import React, {useState, useContext} from 'react';
 import CompareContext from '../../contexts/CompareContext';
 import SearchWidget from './searchWidget';
-import '../../styles/searchWidget.css'
+import '../../styles/searchWidget.css';
+import image1 from '../../assets/placeholder1.png';
 import { ProductProvider } from '../../contexts/ProductContext';
+import ContentElement from './contentElement';
 
 const Main = () => {
 
@@ -50,6 +52,25 @@ const Main = () => {
 
     return (
         <div>
+            <ContentElement 
+                imageUrl={image1}
+                header="Product Store Concept"
+                contentHtml={
+                    <>
+                        <p>Test</p>
+                        <p>Benefits:</p>
+                        <ul>
+                            <li>Offers comparison option to customize product view and isolate products independent of filters</li>
+                            <li>Multiple filters and sort options</li>
+                            <li>Eliminates need for product detail page: Add to Cart direct from widget via modal</li>
+                            <li>Pulls inventory to show 7-day availability: Easily cross-sell alternative products when preferred is not available</li>
+                            <li>Information available via info modala to guide inexperienced purchasers</li>
+                            <li>Comparisons could be leveraged as "favorites" that persist in the user's browser storage or even account data</li> 
+                        </ul>
+                    </>
+
+                }
+            />
             <div className="searchByContainer">
                 <div className="searchByBtn searchByActive" onClick={event => searchByDate(event)}>Search<br/>by Date</div>
                 <div className="searchByBtn" onClick={event => compareLessons(event)}>Compare<br/>Lessons ({comparisons.length})</div>

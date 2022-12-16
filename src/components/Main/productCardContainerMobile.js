@@ -32,6 +32,10 @@ const ProductCardContainerMobile = ({dateIndex, hideUnavailable}) => {
                         </div>
                         <div className="productAttributes">
                             <div>
+                                <h4>FOR AGES</h4>
+                                <p className="productAttributeValue">{product.ageValue}</p>
+                            </div>
+                            <div>
                                 <h4>LESSON TYPE</h4>
                                 <p className="productAttributeValue">{product.productType}</p>
                             </div>

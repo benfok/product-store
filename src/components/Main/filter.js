@@ -23,7 +23,7 @@ const Filter = () => {
     
     // initial state of the filter object. Blank arrays mean product data is unfiltered and products display in full
     let filterObject = {
-        age: [],
+        ageRange: [],
         productType: [],
         discipline: [],
         startTime: [],
@@ -69,7 +69,7 @@ const Filter = () => {
     // resets the filter object and state to blank arrays - full product data displayed
     const clearFilter = () => {
         filterObject = {
-            age: [],
+            ageRange: [],
             productType: [],
             discipline: [],
             startTime: [],
@@ -100,7 +100,7 @@ const Filter = () => {
             <div id="filterDisplay" className="filterContainer filterHidden">
                 <div className="filterOptionsContainer">
                     <FilterOption
-                        field='age'
+                        field='ageRange'
                         fieldName='Age Range'
                     />
                     <FilterOption

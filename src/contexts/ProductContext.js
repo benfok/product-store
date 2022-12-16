@@ -60,8 +60,17 @@ export function ProductProvider({children}){
     
     // the filter functions run through the product data and filter according to the option(s) selected
     const ageFilter = async (filterObject, data) => {
-        if (filterObject.age.length > 0) {
-            return data
+        if (filterObject.ageRange.length > 0) {
+            const newData = data.filter(product => {
+                for(let i = 0; i < product.ageRange.length; i++){
+                    if(filterObject.ageRange.includes(product.ageRange[i])){
+                        return true
+                    } else {
+                        continue
+                    }
+                }
+            })
+            return newData
         }
         return data
     }
