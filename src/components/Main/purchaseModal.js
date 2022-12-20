@@ -3,6 +3,7 @@ import ModalContext from '../../contexts/ModalContext';
 import { IconContext } from 'react-icons/lib';
 import { FaMountain } from 'react-icons/fa';
 import '../../styles/modal.css';
+import modalImage from '../../assets/placeholder2.webp';
 
 const PurchaseModal = ({product, date}) => {
 
@@ -85,6 +86,9 @@ const PurchaseModal = ({product, date}) => {
                     </div>
                     <div className="productContainer">
                         <div className="prodCopyContainerItem">
+                            <div className="modalImageContainer">
+                                <img src={modalImage} alt="Placeholder Image" />
+                            </div>
                             <div className="prodAttributesModal">
                                 <div>
                                     <h4>LESSON TYPE</h4>
@@ -109,8 +113,6 @@ const PurchaseModal = ({product, date}) => {
                                 <li>Key Point 1 - Lorem ipsum dolor sit amet</li>
                                 <li>Key Point 2 - Lorem ipsum dolor sit amet</li>
                                 <li>Key Point 3 - Lorem ipsum dolor sit amet</li>
-                                <li>Key Point 4 - Lorem ipsum dolor sit amet</li>
-                                <li>Key Point 5 - Lorem ipsum dolor sit amet</li>
                             </ul>
                         </div>
                         <div className="prodConfigContainer">

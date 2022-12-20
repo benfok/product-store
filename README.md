@@ -74,17 +74,11 @@ Distributed under the **GNU AGPLv3** license.
 
 ## Screenshots
 Here are some screenshots of the deployed application
-
-### Desktop
-![Screenshot of lists](./server/assets/ethel-desktop1.png)
-
-### Mobile
+s
 <p float="left">
-<img src="./server/assets/ethel-signup.png" alt="mobile signup" width="160"/>
-<img src="./server/assets/ethel-category.png" alt="mobile category" width="160"/>
-<img src="./server/assets/ethel-list.png" alt="mobile list" width="160"/>
-<img src="./server/assets/ethel-modal.png" alt="mobile modal" width="160"/>
-<img src="./server/assets/ethel-move.png" alt="mobile move" width="160"/>
+<img src="./src/assets/searchWidget3.png" alt="Search Widget Example" height="400"/>
+<img src="./src/assets/compare.png" alt="Comparison Example" height="400"/>
+<img src="./src/assets/modal3.png" alt="Product Modal" height="400"/>
 </p>
 
 ## Questions and Links
@@ -92,7 +86,7 @@ Please reach out with any questions regarding the application.
 
 The repository in [GitHub](https://github.com/benfok/product-store)
 
-The deployed [page](https://ethyl.herokuapp.com/)
+The deployed [page](https://benfok.github.io/product-store)
 
 ## Details and Learnings
 - Location is currently defined at the product level, rather than both the product and date level. It is possible for a product to be sold out or unavailable at a certain location, yet available at others. This concept does not yet communicate that effectively.

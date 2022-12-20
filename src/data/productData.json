@@ -15,7 +15,7 @@
         "abilityLevels": ["First Time", "Beginner", "Intermediate", "Advanced"],
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
         "details": "",
-        "twoWeekAvailability": [true, true, true, true, true, true, true, true, true, true, false, false, false, false, false],
+        "twoWeekAvailability": [true, false, true, true, true, true, true, true, true, true, false, false, false, false, false],
         "addOns": []
     },
     {
@@ -33,7 +33,7 @@
         "locations": ["Lionshead", "Vail Village", "Golden Peak"],
         "abilityLevels": ["First Time", "Beginner", "Intermediate", "Advanced"],
         "description": "Full Day Private Snowboard Lesson tailored specifically to you, your group or your family. May include up to 6 participants",
-        "twoWeekAvailability": [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true],
+        "twoWeekAvailability": [true, false, false, false, false, true, true, true, true, true, true, true, true, true, true],
         "addOns": []
     },
     {
@@ -51,7 +51,7 @@
         "locations": ["Lionshead", "Vail Village", "Golden Peak"],
         "abilityLevels": ["First Time", "Beginner", "Intermediate", "Advanced"],
         "description": "Half Day morning (3-hour) Private Ski Lesson tailored specifically to you, your group or your family. May include up to 6 participants",
-        "twoWeekAvailability": [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true],
+        "twoWeekAvailability": [false, false, true, true, true, true, false, false, true, true, true, true, true, false, false],
         "addOns": []
     },
     {
@@ -69,7 +69,7 @@
         "locations": ["Lionshead", "Vail Village", "Golden Peak"],
         "abilityLevels": ["First Time", "Beginner", "Intermediate", "Advanced"],
         "description": "Half Day morning (3-hour) Private Snowboard Lesson tailored specifically to you, your group or your family. May include up to 6 participants",
-        "twoWeekAvailability": [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true],
+        "twoWeekAvailability": [true, true, true, false, true, true, false, true, false, true, true, true, true, true, true],
         "addOns": []
     },
     {
@@ -87,7 +87,7 @@
         "locations": ["Lionshead", "Vail Village", "Golden Peak"],
         "abilityLevels": ["First Time", "Beginner", "Intermediate", "Advanced"],
         "description": "Half Day afternoon (3-hour) Private Ski Lesson tailored specifically to you, your group or your family. May include up to 6 participants",
-        "twoWeekAvailability": [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true],
+        "twoWeekAvailability": [true, true, false, false, false, false, true, true, false, false, false, false, false, true, true],
         "addOns": []
     },
     {
@@ -105,7 +105,7 @@
         "locations": ["Lionshead", "Vail Village", "Golden Peak"],
         "abilityLevels": ["First Time", "Beginner", "Intermediate", "Advanced"],
         "description": "Half Day afternoon (3-hour) Private Snowboard Lesson tailored specifically to you, your group or your family. May include up to 6 participants",
-        "twoWeekAvailability": [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true],
+        "twoWeekAvailability": [true, true, false, false, false, false, false, true, true, false, false, true, true, true, false],
         "addOns": []
     },
     {

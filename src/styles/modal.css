@@ -95,6 +95,17 @@
     padding: 20px 30px;
 }
 
+.modalImageContainer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.modalImageContainer img {
+    object-fit: contain;
+    height:250px;
+}
+
 .prodCopyContainerItem p {
     font-size: 70%;
     text-align: justify;
