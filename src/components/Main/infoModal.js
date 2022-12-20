@@ -1,6 +1,8 @@
 import React from 'react';
 import '../../styles/modal.css';
 
+// InfoModal component takes in a field name that maps to one of the following. This allows the component to be reused to display info relative to field selected
+
 const InfoModal = ({content}) => {
 
     const rewardsModal = (
@@ -88,7 +90,7 @@ const InfoModal = ({content}) => {
             {content === 'startTime' && startTimeModal}
             {content === 'abilityLevels' && abilityLevelModal}
             {content === 'locations' && locationModal}
-            {content === 'age' && ageModal}
+            {content === 'ageRange' && ageModal}
         </>
     )
 }

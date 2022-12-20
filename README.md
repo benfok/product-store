@@ -1,10 +1,14 @@
-# Mock Product Store
+# Mock Product Store (Vail Resorts)
 [![License: GNU AGPLv3](https://img.shields.io/badge/License-GNU_AGPLv3-red.svg)](https://www.gnu.org/licenses/agpl-3.0.en.html)
 
 ## Description
-I used to always forget important things, but then I learned to organize everything by creating a reliable place to store those hard to remember items. Now I'm the most efficient granny around, and I can help you whippersnappers clear your mind-clutter and do the same! **Ethel** is not just an ordinary granny, or an ordinary list making application. Sure, you can create lists, sort them into categories and easily add and remove items, but you can also share lists with other people and collaborate instantly. 
+This is a concept webpage, designed and coded from scratch to mimic Vail's ecommerce template for selling ski and snowboard lessons, and to showcase potential solutions to some of the perceived shortfalls of the existing system. **Please note:** The products, pricing and information displayed on the mock page are for display purposes only, and not connected to actual products or pricing sold by Vail.com.
 
-Left your grocery list under the fridge magnet? Mobile-first development means your lists are right at home on your phone, and more importantly always with you. Want to know what items your partner or roommate just picked up from 5 aisles over? Share and work off the same list in the store, in real time. Need a place to share movie recommendations, gift ideas or party planning to-dos? Ethel's got you covered.
+This mock product store page is built to match the sylistic framework of the existing vail.com site and store structure. It is enhanced however as a single page, product search and filter application, designed to both perosnalize and streamline the purchase experience, as well as drive increased revenue through promoting alternative products if the preferred option is unavailable - a frequent occurrence for popular products.
+
+**A note on render times:** It is recognized and appreciated that a real-life application of this concept would require database calls for real-time product inventory that may impact rendering times. It may limit the effectiveness of a 7-day availability display for multiple products on slow-speed connections, or the need to setup and account for using cached inventory data. For the purpose of demonstration here, API calls are replaced by static values in a .json file.
+
+**Mobile Version:** This concept is designed for desktop only, and will not render if viewed on devices below 1080px is screen width. For a mobile concept version, please contact me directly [ben@tidylines.co](mailto:ben@tidylines.co)
 
 <details>
 <summary><strong>Table of Contents</strong></summary>
@@ -13,8 +17,6 @@ Left your grocery list under the fridge magnet? Mobile-first development means y
 - [Installation](#installation)
 - [Usage](#usage)
 - [License](#license)
-- [Contributing Guidelines](#contributing-guidelines)
-- [Tests](#tests)
 - [Screenshots](#screenshots)
 - [Questions and Links](#questions-and-links)
 - [Details and Learnings](#details-and-learnings)
@@ -22,50 +24,36 @@ Left your grocery list under the fridge magnet? Mobile-first development means y
 
 ## Background, Credits and Tech
 
-We began by defining a simple **USER STORY**
+This concept considers the following **USER STORY**
 
 <details>
 <summary><strong>User Story</strong></summary>
 <blockquote>
 <br>
-<p>AS A busy person with lots to remember<br>
-I WANT an easy way to keep track of my life and share information with others<br>
-I WANT to create lists and categorize them however I want<br>
-SO THAT I can refer back to them when I need them<br>
-I WANT to be able to easily add and check off items<br>
-SO THAT I can remember everything I need<br>
-I WANT to share these individual lists with others<br>
-SO THAT they can add or remove items and collaborate<br>
-I WANT to be able to select who I share each list with<br>
-SO THAT I can share what is relevant but still maintain privacy<br>
-I WANT to save the users that I’ve shared lists with before<br>
-SO THAT I can easily share other lists with them again<br>
+<p>AS A customer visiting a resort and wanting to purchase ski/snowboard lessons for my family<br>
 I WANT the interface to be responsive and intuitive<br>
-SO THAT it’s easy to add and review items</p>
-<br>
+SO THAT it’s easy to navigate<br>
+I WANT an easy way to view the product options and filter them in useful ways<br>
+SO THAT I can narrow my search<br>
+I WANT to be able to easily see availability for particular dates and times<br>
+SO THAT I can plan my trip accordingly<br>
+I WANT to be able to customize how I compare products and availability<br>
+SO THAT I can be assured of meeting the needs of my families varied skill level, ages, disciplines and interests<br>
+I WANT to be able to easily add products and necessary add-ons to my cart and continue shopping<br>
+SO THAT I can shop efficiently<br>
+I WANT to know if I am eligible for any discounts or perks as a passholder<br>
+SO THAT I know I am getting the best deal<br>
+<br></p>
 </blockquote>
 </details>
 
-This app was built with contributions from the following:
-- [benfok](https://github.com/benfok/): Full Stack Development: Back-end Node and Express setup, GraphQL queries and resolvers, authentication, database schemas, models and seeds. Front-end React and responsive custom CSS. Concept and wireframing.
-- [mlfitz2](https://github.com/mlfitz2): Back-end models. Front-end responsive CSS. Concept and wireframing.
-- [Dan-Klo](https://github.com/Dan-Klo): Utility, project planning and documentation. Concept and wireframing.
+This app was built from scratch by [benfok](https://github.com/benfok/) dba Tidy Lines LLC. 
 
 ### Languages and Modules Used
-Ethyl is a full-stack MERN application built using the following languages and modules:
+The page is written entirely in [React.JS](https://reactjs.org) and leverages the following dependency packages:
 
-- [MongoDB](https://www.mongodb.com) for data storage
-- [Express.JS](https://expressjs.com/) as a webserver framework for [Node.JS](https://nodejs.org/api/documentation.html)
-- Front-end built entirely using [React.JS](https://reactjs.org)
-- Leveraging [GraphQL] and Apollo (https://graphql.org) for database CRUD operations
-- Deployed on [Heroku](https://www.heroku.com)    
-- Other Dependency Packages Include:
-  - [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken) (JWT) for authentication
-  - [mongoose](https://www.npmjs.com/package/mongoose) as an ODM for MongoDB
-  - [react-icons](https://www.npmjs.com/package/react-icons) as an icon library
-  - [react-router-dom](https://www.npmjs.com/package/react-router-dom) for in-app routing
-  - [bcrypt](https://www.npmjs.com/package/bcrypt) module for password encryption for sign-up and login functionality
-  - [dotenv](https://www.npmjs.com/package/dotenv) used to host credentials in an environment file 
+- [react-icons](https://www.npmjs.com/package/react-icons) as an icon library
+- [react-datepicker](https://www.npmjs.com/package/react-datepicker) for the calendar date picker functionality
 
 ## Installation
 ### Local Installation
@@ -76,23 +64,13 @@ Ethyl is a full-stack MERN application built using the following languages and m
 - run `npm run develop` to run the application on your local machine running at http://localhost:3000/.
 
 ## Usage
-To use the application sign-up by creating your own user or use the username and password stored in the seeds/userData.json file to login as Ethel. 
+- This application does nothing other than showcase potential design solutions. You cannot actually purchase or book any ski or snowboard lessons.
+- Select a date from the date picker (default is tomorrow)
+- Apply filters and sort results as desired. Note that Sorting is instantly rendered, where as Filters require the Update Results button to be clicked to avoid unecessary "API" calls
+- Adding a product to "comparison" will add it to the comparison tap atop the search widget 
 
 ## License
-Distributed under the **MIT** license.
-
-## Contributing Guidelines
-Contributions help our open source community to continue to evolve, and any contributions are greatly appreciated. If you have a suggestion that would improve this code please follow the directions below. I require that any and all changes adhere to the Code of Conduct outlined in the [Contributor Covenant](https://www.contributor-covenant.org/).
-
- - Fork the repo
- - Create your feature branch
- - Commit your changes
- - Push the branch and open a pull request
-
-> _**Note:** Any contributions are understood to be under the same MIT that covers the project._
-
-## Tests
-There are currently no tests written for this application.
+Distributed under the **GNU AGPLv3** license. 
 
 ## Screenshots
 Here are some screenshots of the deployed application
@@ -112,23 +90,17 @@ Here are some screenshots of the deployed application
 ## Questions and Links
 Please reach out with any questions regarding the application.
 
-The epository in [GitHub](https://github.com/benfok/Ethel)
+The repository in [GitHub](https://github.com/benfok/product-store)
 
-The deployed application on [Heroku](https://ethyl.herokuapp.com/)
+The deployed [page](https://ethyl.herokuapp.com/)
 
 ## Details and Learnings
-- Creating the list actions modal within the context of each list itself rather than the full page allows the user to easily see which list they are acting on and keeps the functionality intuitive. There is a risk with this approach due to the potential size conflict between the user search modal and the list card size, for example if a search for users to share a list returns a large number of results.
-- Currently, the user must click Refresh on a shared list to view changes made by other users. Could consider a timed refresh here to make the app appear more dynamic.
-- When a list is shared it first lands in the recipient's "Uncategorized" category, allowing them to the Move it to a category of their choice.
-- When sharing a list, you cannot duplicate sharing, and lists can only be shared or deleted by their original owner.
-- Could refactor to store data in a global context rather than prop drilling list and category information through so many components.
+- Location is currently defined at the product level, rather than both the product and date level. It is possible for a product to be sold out or unavailable at a certain location, yet available at others. This concept does not yet communicate that effectively.
+- Filters currently reset when moving between Search and Comparison tabs. It makes sense to not carry filters over to the comparison tab, but perhaps Search tab filters should persist.
+- Filters are not dynamically applied but instead require the Update Results button to be clicked. This was intentional to avoid redundant re-renders.
+- Within the Product Detail Modal - Price of product, add-ons and discounts increment for Group Lessons based on number of days selected. For Private Lessons, price is currently coded to remain the same regardless of number of participants.
 
-Some considerations for **future development** include:
-  - Inclusion of a service worker and local/cache first fetch policies to allow for limited offline use and installation as a PWA.
-  - Add functionality to remove or update categories and un-share lists.
-  - Ability to sort and pin lists within categories.
-  - Search function for lists by keywords/items in list.
-  - Be able to add a comment to list items.
-  - Reminder functionality.
-
-Thanks for reading. Enjoy The App! And can I interest you in a hard butterscotch candy?
+Some considerations for **additional enhancements** include:
+  - Design a more visual representation of Start Time, Lesson Type, Duration and Age Range within the product table
+  - Allow users to save 'favorite' products either within browser storage or their account if logged in
+  - Offer users to chance to be notified if a Sold Out product date becomes available
