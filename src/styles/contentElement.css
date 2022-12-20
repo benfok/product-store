@@ -34,21 +34,32 @@
 .contentCopyContainer {
     /* max-width: 55%; */
     flex: 0 0 53%;
-    padding: 40px 20px;
+    padding: 40px 40px 40px 20px;
     font-size: 80%;
 }
 
-.contentCopyContainer h2 {
+.contentCopyContainer > h2 {
     text-transform: uppercase;
     margin-bottom: 0.5rem;
 }
 
-.contentCopyContainer ul {
+.contentCopyContainer div > ul {
     margin-left: 50px;
 }
 
-.contentCopyContainer p, li {
+.contentCopyContainer div > p, 
+.contentCopyContainer div > ul > li,
+.contentCopyContainer div > h4 {
     margin-bottom: 0.5rem;
+}
+
+.contentCopyContainer div > .btn {
+    width: 50%;
+    margin-top: 1rem;
+}
+
+.contentCopyContainer div > div > a {
+    color: white
 }
 
 @media only screen and (min-width: 1200px) {

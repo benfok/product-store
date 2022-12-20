@@ -1,13 +1,19 @@
 import React, {useState, useContext} from 'react';
+import useMedia from '../../hooks/useMedia';
 import CompareContext from '../../contexts/CompareContext';
 import SearchWidget from './searchWidget';
 import '../../styles/searchWidget.css';
 import image1 from '../../assets/placeholder1.png';
+import { IconContext } from 'react-icons/lib';
 import { ProductProvider } from '../../contexts/ProductContext';
+import { TbArrowAutofitWidth } from 'react-icons/tb';
 import ContentElement from './contentElement';
 import FeaturesElement from './featuresElement';
 
 const Main = () => {
+
+    // determine if screen size is less than 1080px and render accordingly
+    const isMobile = useMedia('(max-width: 1080px)');
 
     const today = new Date();
 
@@ -52,69 +58,75 @@ const Main = () => {
     // render the search widget. Wrapping the widget in the Product Provider ensures that if the product data changes as a result of changes to the search filters, the results re-render
 
     return (
-        <div>
-            <ContentElement 
-                imageUrl={image1}
-                header="Product Store Concept"
-                contentHtml={
-                    // <>
-                    //     <p>Test</p>
-                    //     <p>Benefits:</p>
-                    //     <ul>
-                    //         <li>Offers comparison option to customize product view and isolate products independent of filters</li>
-                    //         <li>Multiple filters and sort options</li>
-                    //         <li>Eliminates need for product detail page: Add to Cart direct from widget via modal</li>
-                    //         <li>Pulls inventory to show 7-day availability: Easily cross-sell alternative products when preferred is not available</li>
-                    //         <li>Information available via info modala to guide inexperienced purchasers</li>
-                    //         <li>Comparisons could be leveraged as "favorites" that persist in the user's browser storage or even account data</li> 
-                    //          <li>Single page, written in react for responsiveness</li>
-                    //     </ul>
-                    // </>
-
-                    // use the FCE to just promote the concept and the idea. Explain abut mobile only, the 14 day window and inventory replication for 7 days out. Note that this may be challenging.
-
-                    // then combine the issues with the soluctions in an element below
-
-
-                    <>
-                        <p>This is a concept webpage, designed from scratch to mimic Vail's ecommerce template for selling ski and snowboard lessons, and showcasing solutions to some of the perceived shortfalls of the existing system. For more detail, view the README file within the GitHub repo.</p>
-                        <ul>
-                            <li><strong>Inability to Cross-sell and Fill Idle Capacity:</strong><br/>When a preferred product is not available, there is no dynamic way to promote an available alternative.</li>
-                            <li><strong>Too Many Clicks to Determine Availability: </strong><br/>Customers currently need to drill too far into the product purchase funnel to determine availability and add to cart.</li>
-                            <li><strong>Too Many Options: </strong><br/>Insufficient filter options and no way to compare products and availability if looking to book a diverse product set. (e.g. for a family with differing ages and skill levels)</li>
-                        </ul>
-                    </>
-
-                }
-            />
-            <FeaturesElement />
-            <div className="searchByContainer">
-                <div className="searchByBtn searchByActive" onClick={event => searchByDate(event)}>Search<br/>by Date</div>
-                <div className="searchByBtn" onClick={event => compareLessons(event)}>Compare<br/>Lessons ({comparisons.length})</div>
-            </div>
-            <ProductProvider>
-                <div className="resultsContainer">
-                    {activeTab === "by date" && <SearchWidget 
-                        selectedDate={selectedDate} 
-                        setSelectedDate={setSelectedDate} 
-                        startDate={startDate}
-                        endDate={endDate}
-                        dateIndex={dateIndex}
-                        setDateIndex={setDateIndex}
-                        activeTab={activeTab}
-                    />}
-                    {activeTab === "compare" && <SearchWidget 
-                        selectedDate={selectedDate} 
-                        setSelectedDate={setSelectedDate} 
-                        startDate={startDate}
-                        endDate={endDate}
-                        dateIndex={dateIndex}
-                        setDateIndex={setDateIndex}
-                        activeTab={activeTab}
-                    />}
+        <main>
+            {isMobile &&
+                <div className="mobilePlaceholder">
+                    <IconContext.Provider value={{ className: "mobileMainIcon"}}>
+                        <TbArrowAutofitWidth />
+                    </IconContext.Provider>
+                    <p>This Product Store concept is currently only configured for screen widths 1080 pixels or wider.</p><br/>
+                    <p>For a mobile version, please contact:<br/><a href="mailto:ben@tidylines.co">ben@tidylines.co</a></p>
                 </div>
-            </ProductProvider>
-        </div>
+            }
+            {!isMobile && 
+                <>
+                    <ContentElement 
+                        imageUrl={image1}
+                        header="Product Store Concept"
+                        contentHtml={
+                            // use the FCE to just promote the concept and the idea. Explain abut mobile only, the 14 day window and inventory replication for 7 days out. Note that this may be challenging.
+
+                            // then combine the issues with the soluctions in an element below
+
+
+                            <>
+                                <p>This is a concept webpage, designed from scratch to mimic Vail's ecommerce template for selling ski and snowboard lessons, and showcasing solutions to some of the perceived shortfalls of the existing system. </p>
+                                <p>For more detail, expand the Feature Detail section below of view the README file within the GitHub repo.</p>
+                                <h4>NOTES ABOUT THIS MOCK:</h4>
+                                <ul>
+                                    <li>Single page mock up: Navigation and cart do not exist</li>
+                                    <li>Viewing desktop mock only: Mobile concept available on request</li>
+                                    <li>Mock limited to dates within 14 days of today with availability simulated to imitate inventory</li>
+                                </ul>
+                                <div className="btn secondaryCTA">
+                                    <a href="https://github.com/benfok/product-store" target="_blank" rel="noopener noreferrer">
+                                            View GitHub Repo
+                                    </a>
+                                </div>
+                            </>
+
+                        }
+                    />
+                    <FeaturesElement />
+                    <div className="searchByContainer">
+                        <div className="searchByBtn searchByActive" onClick={event => searchByDate(event)}>Search<br/>by Date</div>
+                        <div className="searchByBtn" onClick={event => compareLessons(event)}>Compare<br/>Lessons ({comparisons.length})</div>
+                    </div>
+                    <ProductProvider>
+                        <div className="resultsContainer">
+                            {activeTab === "by date" && <SearchWidget 
+                                selectedDate={selectedDate} 
+                                setSelectedDate={setSelectedDate} 
+                                startDate={startDate}
+                                endDate={endDate}
+                                dateIndex={dateIndex}
+                                setDateIndex={setDateIndex}
+                                activeTab={activeTab}
+                            />}
+                            {activeTab === "compare" && <SearchWidget 
+                                selectedDate={selectedDate} 
+                                setSelectedDate={setSelectedDate} 
+                                startDate={startDate}
+                                endDate={endDate}
+                                dateIndex={dateIndex}
+                                setDateIndex={setDateIndex}
+                                activeTab={activeTab}
+                            />}
+                        </div>
+                    </ProductProvider>
+                </>
+            }
+        </main> 
     )
 }
 

@@ -52,10 +52,8 @@
 }
 
 .featureIcon {
-    font-size: 100px;
-    border: solid 1px #eeeeee;
+    font-size: 80px;
     padding: 10px;
-    border-radius: 50%;
 }
 
 .featureCopyContainer {
@@ -66,19 +64,13 @@
     font-size: 80%;
 }
 
+.featureCopy {
+    width: 50%
+}
+
 .compareIcon {
-    color: var(--altbackground);
-    font-size: 80px;
-}
-
-.featureCompare p {
-    width: 50%;
-    text-align: justify;
-}
-
-.featureCompare ul {
-    padding-left: 20px;
-    width: 50%;
+    color: #474E52;
+    font-size: 40px;
 }
 
 @media only screen and (min-width: 1200px) {

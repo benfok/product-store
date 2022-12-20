@@ -8,7 +8,7 @@
 
 .byDateResultsRow {
     display: grid;
-    grid-template-columns: 396px 84px 84px 84px 84px 84px 84px 84px;
+    grid-template-columns: 390px 9% 9% 9% 9% 9% 9% 9%;
     justify-content: center;
     margin-bottom: 10px;
 }
