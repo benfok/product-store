@@ -1,0 +1,90 @@
+.featuresElement {
+    padding: 0;
+    margin: 5px 5px 40px 5px;
+}
+
+.featuresPanel {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding-left: 20px;
+    margin: 0 10px 0px 10px;
+    border: solid 1px #eeeeee;
+    background-color: #eeeeee;
+    color: #000000;
+
+}
+
+.featuresPanel:hover,
+.featuresPanel:active {
+    cursor: pointer;
+}
+
+.featuresIconContainer {
+    display: flex;
+    padding: 15px;
+}
+
+.featuresPanelIcon {
+    font-size: 20px;
+    background-color: #eeeeee;
+}
+
+.featuresContainer {
+    border-left: solid 1px #eeeeee;
+    border-right: solid 1px #eeeeee;
+    padding: 20px 20px;
+    margin: 0 10px;
+    display: flex;
+    flex-flow: row;
+    gap: 50px;
+    align-items: center;
+}
+
+.featuresContainer:last-of-type {
+    border-bottom: solid 1px #eeeeee;
+}
+
+.featuresHidden {
+    display: none;
+}
+
+.featureIcon {
+    font-size: 100px;
+    border: solid 1px #eeeeee;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.featureCopyContainer {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    gap: 20px;
+    font-size: 80%;
+}
+
+.compareIcon {
+    color: var(--altbackground);
+    font-size: 80px;
+}
+
+.featureCompare p {
+    width: 50%;
+    text-align: justify;
+}
+
+.featureCompare ul {
+    padding-left: 20px;
+    width: 50%;
+}
+
+@media only screen and (min-width: 1200px) {
+    .featuresElement {
+        width: 1180px;
+        margin: 5px auto 40px auto;
+    }
+
+}

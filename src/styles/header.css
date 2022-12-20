@@ -97,7 +97,7 @@ h1 {
         font-size: 250%;
     }
     
-    p {
+    h1 + p {
         font-size: 80%;
     }
 

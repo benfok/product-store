@@ -9,6 +9,7 @@
     margin-left:25%;
     /* transform: translate(25%, 0); */
     background-color: #eeeeee;
+    transform: rotate(-0.5deg);
 }
 
 .contentElementContainer {
@@ -34,11 +35,20 @@
     /* max-width: 55%; */
     flex: 0 0 53%;
     padding: 40px 20px;
+    font-size: 80%;
+}
+
+.contentCopyContainer h2 {
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
 }
 
 .contentCopyContainer ul {
     margin-left: 50px;
-    font-size: 90%;
+}
+
+.contentCopyContainer p, li {
+    margin-bottom: 0.5rem;
 }
 
 @media only screen and (min-width: 1200px) {

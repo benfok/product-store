@@ -5,6 +5,7 @@ import '../../styles/searchWidget.css';
 import image1 from '../../assets/placeholder1.png';
 import { ProductProvider } from '../../contexts/ProductContext';
 import ContentElement from './contentElement';
+import FeaturesElement from './featuresElement';
 
 const Main = () => {
 
@@ -56,21 +57,37 @@ const Main = () => {
                 imageUrl={image1}
                 header="Product Store Concept"
                 contentHtml={
+                    // <>
+                    //     <p>Test</p>
+                    //     <p>Benefits:</p>
+                    //     <ul>
+                    //         <li>Offers comparison option to customize product view and isolate products independent of filters</li>
+                    //         <li>Multiple filters and sort options</li>
+                    //         <li>Eliminates need for product detail page: Add to Cart direct from widget via modal</li>
+                    //         <li>Pulls inventory to show 7-day availability: Easily cross-sell alternative products when preferred is not available</li>
+                    //         <li>Information available via info modala to guide inexperienced purchasers</li>
+                    //         <li>Comparisons could be leveraged as "favorites" that persist in the user's browser storage or even account data</li> 
+                    //          <li>Single page, written in react for responsiveness</li>
+                    //     </ul>
+                    // </>
+
+                    // use the FCE to just promote the concept and the idea. Explain abut mobile only, the 14 day window and inventory replication for 7 days out. Note that this may be challenging.
+
+                    // then combine the issues with the soluctions in an element below
+
+
                     <>
-                        <p>Test</p>
-                        <p>Benefits:</p>
+                        <p>This is a concept webpage, designed from scratch to mimic Vail's ecommerce template for selling ski and snowboard lessons, and showcasing solutions to some of the perceived shortfalls of the existing system. For more detail, view the README file within the GitHub repo.</p>
                         <ul>
-                            <li>Offers comparison option to customize product view and isolate products independent of filters</li>
-                            <li>Multiple filters and sort options</li>
-                            <li>Eliminates need for product detail page: Add to Cart direct from widget via modal</li>
-                            <li>Pulls inventory to show 7-day availability: Easily cross-sell alternative products when preferred is not available</li>
-                            <li>Information available via info modala to guide inexperienced purchasers</li>
-                            <li>Comparisons could be leveraged as "favorites" that persist in the user's browser storage or even account data</li> 
+                            <li><strong>Inability to Cross-sell and Fill Idle Capacity:</strong><br/>When a preferred product is not available, there is no dynamic way to promote an available alternative.</li>
+                            <li><strong>Too Many Clicks to Determine Availability: </strong><br/>Customers currently need to drill too far into the product purchase funnel to determine availability and add to cart.</li>
+                            <li><strong>Too Many Options: </strong><br/>Insufficient filter options and no way to compare products and availability if looking to book a diverse product set. (e.g. for a family with differing ages and skill levels)</li>
                         </ul>
                     </>
 
                 }
             />
+            <FeaturesElement />
             <div className="searchByContainer">
                 <div className="searchByBtn searchByActive" onClick={event => searchByDate(event)}>Search<br/>by Date</div>
                 <div className="searchByBtn" onClick={event => compareLessons(event)}>Compare<br/>Lessons ({comparisons.length})</div>
