@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/product-store/static/css/main.4b5eb669.css",
+    "main.js": "/product-store/static/js/main.6400f319.js",
+    "static/media/placeholder1.png": "/product-store/static/media/placeholder1.68a941e0ff562a93ddee.png",
+    "static/media/vailFooter.png": "/product-store/static/media/vailFooter.2b821c8e3f9789e4e35b.png",
+    "static/media/vailDesktopMenu.png": "/product-store/static/media/vailDesktopMenu.49e2766ceb4600922106.png",
+    "index.html": "/product-store/index.html",
+    "static/media/skischool-header-mountains.svg": "/product-store/static/media/skischool-header-mountains.4d5b302084945da0f6cc.svg",
+    "main.4b5eb669.css.map": "/product-store/static/css/main.4b5eb669.css.map",
+    "main.6400f319.js.map": "/product-store/static/js/main.6400f319.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4b5eb669.css",
+    "static/js/main.6400f319.js"
+  ]
+}
