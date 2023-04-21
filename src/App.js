@@ -39,7 +39,7 @@ function App() {
                 </section>
               </div>
             }  
-          <Router>         
+          <Router basename='product-store'>         
             <Header />
             <CompareProvider>
               <Routes>
