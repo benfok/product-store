@@ -22,14 +22,14 @@ const Card = ({cardID, image, imageAlt, heading, shortDesc, longDesc, ctaText, h
         if (!value) {
             document.querySelector(`[data-id='content-${cardID}'`).style.height = '350px';
             document.querySelector(`[data-id='image-${cardID}'`).style.height = '70px';
-            setTimeout(delay, 600);
+            setTimeout(delay, 550);
             return
         }       
         if (!isExpanded) {
             document.querySelector(`[data-id='content-${cardID}'`).style.height = '350px';
             document.querySelector(`[data-id='image-${cardID}'`).style.height = '70px';
             changeTab(value)
-            setTimeout(delay, 600);
+            setTimeout(delay, 550);
         } else {
             changeTab(value)
         }
