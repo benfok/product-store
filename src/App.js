@@ -1,8 +1,10 @@
 import './App.css';
 
 import { useContext } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ModalContext from './contexts/ModalContext';
 import Main from './components/Main/main';
+import CardMock from './components/Card/cardMock';
 import Header from './components/Header/index';
 import Footer from './components/Footer/index';
 import PurchaseModal from './components/Main/purchaseModal';
@@ -37,11 +39,26 @@ function App() {
                 </section>
               </div>
             }  
-          <Header />
-          <CompareProvider>
-            <Main />
-          </CompareProvider>
-          <Footer />
+          <Router>         
+            <Header />
+            <CompareProvider>
+              <Routes>
+                <Route 
+                  path="/" 
+                  element={<Main />} 
+                />
+                <Route
+                  path="/card"
+                  element={<CardMock />}
+                />
+                <Route 
+                  path="*" 
+                  element={<Main />} 
+                />
+              </Routes>
+            </CompareProvider>
+            <Footer />
+          </Router>
         </div>
   );
 }
